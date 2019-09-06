@@ -1,0 +1,21 @@
+/**
+   leitura analógica
+   @AUTHOR RAFAEL OLIVEIRA DE SOUZA
+*/
+
+void setup() {
+  Serial.begin(9600);
+  pinMode (2, OUTPUT);
+}
+
+void loop() {
+  int leitura;
+  leitura = analogRead(A0); // 0 a 1023
+  Serial.println(leitura);
+
+  if (leitura < 850) {
+    digitalWrite (2, HIGH);
+  } else {
+    digitalWrite(2, LOW) ;
+  }
+}
